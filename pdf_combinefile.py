@@ -1,8 +1,8 @@
 import PyPDF2
 
-files = ['建立品牌.pdf', '竣宏數位科技DM.pdf']
+files = ['建立品牌.pdf', 'jhdigitech website.pdf']
 pdf_combine = PyPDF2.PdfFileWriter()
-file_output = open('建立品牌與DM.pdf','wb')
+file_output = open('建立品牌與website.pdf','wb')
 
 for file in files:
     pdf_reader = PyPDF2.PdfFileReader(open(file, 'rb'))
