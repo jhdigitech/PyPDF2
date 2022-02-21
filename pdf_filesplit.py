@@ -13,4 +13,4 @@ if page_num > 4:
         pdf_writer.addPage(newpage)
         pdf_writer.write(open(outfile,'wb'))
 
-print('分割ok')
+print('切割ok')
