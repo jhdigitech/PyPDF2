@@ -3,7 +3,7 @@ how to use PyPDF2
 在此我分享PyPDF的函式，使用經驗
 首先要pip install PyPDF2 在Anaconda Promot(Ananconda 3) 將PyPDF導入系統套件
 
-第一招 ~ 分割檔案 
+Share_1 ~ 切割檔案 
 =========================================================================
 from PyPDF2 import PdfFileWriter, PdfFileReader
 
@@ -22,7 +22,24 @@ if page_num > 4:  # 如果頁數大於4
 print('分割ok') # remind you this action is done
 =========================================================================
 
+Share_2 ~ 合併檔案 
+=========================================================================
+import PyPDF2
 
+files = ['建立品牌.pdf', 'jhdigitech website.pdf']
+pdf_combine = PyPDF2.PdfFileWriter()
+file_output = open('建立品牌與website.pdf','wb')
+
+for file in files:
+    pdf_reader = PyPDF2.PdfFileReader(open(file, 'rb'))
+    for i in range(pdf_reader.numPages):
+        #print(pdf_reader.getPage(i))
+        pdf_combine.addPage(pdf_reader.getPage(i))
+
+pdf_combine.write(file_output)   
+file_output.close()
+print('done')  
+=========================================================================
 
 
 
